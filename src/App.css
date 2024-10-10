@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+}
+
+.sidebar {
+  flex: 1;
+  height: 100vh;
+  background-color: aqua;
+}
+.content {
+  flex: 2;
+}
