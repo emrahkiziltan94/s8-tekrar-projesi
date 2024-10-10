@@ -27,7 +27,7 @@ export default function ProductAdd(props) {
   };
   const validate = (name, value) => {
     const regex = /\d/;
-    if (regex.test(value) || value) {
+    if (regex.test(value) || !value) {
       setErrors({ ...errors, [name]: 'Sayısal değer yada null olamaz' });
       setIsErrorExist(true);
     } else {
@@ -56,6 +56,7 @@ export default function ProductAdd(props) {
             id="title"
             value={formData.title}
             onChange={onChange}
+            onBlur={onChange}
           />
           {errors.title && <p style={{ color: 'red' }}>{errors.title}</p>}
         </div>
@@ -73,6 +74,7 @@ export default function ProductAdd(props) {
             id="description"
             value={formData.description}
             onChange={onChange}
+            onBlur={onChange}
           />
           {errors.description && (
             <p style={{ color: 'red' }}>{errors.description}</p>
